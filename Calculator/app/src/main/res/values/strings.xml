@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Calculator-ipoteka</string>
+    <string name="app_name">Ипотечный калькулятор</string>
+    <string name="loading">Загрузка...</string>
 </resources>

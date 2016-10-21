@@ -9,9 +9,145 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ru.ageev_victor.calculator_ipoteka.MainActivity">
-
+    />
     <TextView
+        android:id="@+id/textView_stoimostKv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="26dp"
+        android:text="Стоимость квартиры:" />
+
+    <TextView
+        android:id="@+id/extView_srokKredita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/extView_pervonachVznos"
+        android:layout_marginTop="28dp"
+        android:text="Срок кредита:" />
+
+    <TextView
+        android:id="@+id/extView_procentStavka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/extView_srokKredita"
+        android:layout_marginTop="28dp"
+        android:text="Процентная ставка:" />
+
+    <EditText
+        android:id="@+id/editText_stoimostKv"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/extView_pervonachVznos"
+        android:layout_alignTop="@+id/textView_stoimostKv"
+        android:layout_toEndOf="@+id/extView_pervonachVznos"
+        android:layout_toRightOf="@+id/extView_pervonachVznos"
+        android:ems="10"
+        android:inputType="textPersonName|number"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/editText_pervonachVznos"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/extView_pervonachVznos"
+        android:layout_alignEnd="@+id/editText_stoimostKv"
+        android:layout_alignRight="@+id/editText_stoimostKv"
+        android:layout_alignTop="@+id/extView_pervonachVznos"
+        android:layout_toRightOf="@+id/extView_pervonachVznos"
+        android:ems="10"
+        android:inputType="textPersonName|number"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/editText_srokKredita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/extView_procentStavka"
+        android:layout_alignEnd="@+id/editText_pervonachVznos"
+        android:layout_alignRight="@+id/editText_pervonachVznos"
+        android:layout_alignTop="@+id/extView_srokKredita"
+        android:layout_toRightOf="@+id/extView_pervonachVznos"
+        android:ems="10"
+        android:inputType="textPersonName|number"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/editText_procentStavka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/extView_procentStavka"
+        android:layout_alignEnd="@+id/editText_srokKredita"
+        android:layout_alignRight="@+id/editText_srokKredita"
+        android:layout_alignTop="@+id/extView_procentStavka"
+        android:layout_toRightOf="@+id/textView_stoimostKv"
+        android:ems="10"
+        android:inputType="textPersonName|number"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/extView_DopParams"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText_procentStavka"
+        android:layout_alignRight="@+id/editText_procentStavka"
+        android:layout_below="@+id/extView_procentStavka"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="33dp"
+        android:text="Дополнительные параметры:" />
+
+    <TextView
+        android:id="@+id/extView_vidPlateza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/extView_DopParams"
+        android:layout_marginTop="14dp"
+        android:text="Вид платежа:" />
+
+    <TextView
+        android:id="@+id/extView_nachaloViplat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/extView_vidPlateza"
+        android:layout_marginTop="27dp"
+        android:text="Начало выплат:" />
+
+    <TextView
+        android:id="@+id/extView_pervonachVznos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView_stoimostKv"
+        android:layout_marginTop="22dp"
+        android:text="Первоначальный взнос:" />
+
+    <Spinner
+        android:id="@+id/spinner_vidPlateza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/extView_nachaloViplat"
+        android:layout_alignEnd="@+id/editText_procentStavka"
+        android:layout_alignRight="@+id/editText_procentStavka"
+        android:layout_alignTop="@+id/extView_vidPlateza"
+        android:layout_toEndOf="@+id/extView_nachaloViplat"
+        android:layout_toRightOf="@+id/extView_nachaloViplat" />
+
+    <Button
+        android:id="@+id/button_rasschitat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="Рассчитать"
+        android:layout_below="@+id/extView_nachaloViplat" />
+
 </RelativeLayout>
