@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Ипотечный калькулятор</string>
     <string name="loading">Загрузка...</string>
+    <string name="stoimost">Стоимость квартиры:(руб)</string>
+    <string name="srok">Срок кредита:(лет)</string>
+    <string name="stavka">Процентная ставка:(%)</string>
+    <string name="dop_parametri">Дополнительные параметры:</string>
+    <string name="vid_plateza">Вид платежа:</string>
+    <string name="nachalo_viplat">Начало выплат:</string>
+    <string name="perv_vznos">Первоначальный взнос:(руб)</string>
+    <string name="raschitat">Рассчитать</string>
 </resources>
