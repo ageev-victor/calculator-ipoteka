@@ -1,5 +1,6 @@
 package ru.ageev_victor.calculator_ipoteka;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -7,6 +8,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -27,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
     EditText srokKreditaEditText;
     EditText procentStavkaEditText;
     TextView mesPlatezTextView;
-    TextView pereplataTextView;
+    TextView pereplataChisloTextView;
+    public static ArrayList<Row> rows = new ArrayList<>();
 
 
     @Override
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         srokKreditaEditText = (EditText) findViewById(R.id.editText_srokKredita);
         procentStavkaEditText = (EditText) findViewById(R.id.editText_procentStavka);
         mesPlatezTextView = (TextView) findViewById(R.id.mesPlatezTextView);
-        pereplataTextView = (TextView) findViewById(R.id.pereplataTextView);
+        pereplataChisloTextView = (TextView) findViewById(R.id.pereplataChisloTextView);
     }
 
 
@@ -63,7 +66,23 @@ public class MainActivity extends AppCompatActivity {
         summaKredita = stoimostKv - pervonachVznos;
         mesPlatez = summaKredita * (koefProcStavki + koefProcStavki / (koefSt - 1));
         mesPlatezTextView.setText(String.valueOf((int) mesPlatez) + " руб/мес");
-        pereplata = (int) (mesPlatez*srokKredita - summaKredita);
-        pereplataTextView.setText(pereplata + " руб");
+        pereplata = (int) (mesPlatez * srokKredita - summaKredita);
+        pereplataChisloTextView.setText(pereplata + " руб");
+    }
+
+    public void showTablPlatezei(View view) {
+
+        for (int i = 1; i < srokKredita; i++) {
+            /*double procenti =
+            double ostatok =
+            double osnDolg =
+            double vsego =
+*/
+            Row row = new Row(getApplicationContext(), i, 0.1, 0.2, 0.5, 0.8);
+            rows.add(row);
+
+        }
+        Intent intent = new Intent(this, TableActivity.class);
+        startActivity(intent);
     }
 }
