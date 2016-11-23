@@ -10,174 +10,196 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ru.ageev_victor.calculator_ipoteka.MainActivity">
 
-    <TextView
-        android:id="@+id/extView_procentStavka"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/extView_srokKredita"
-        android:layout_marginTop="28dp"
-        android:text="@string/stavka" />
-
-    <TextView
-        android:id="@+id/extView_pervonachVznos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView_stoimostKv"
-        android:layout_marginTop="22dp"
-        android:text="@string/perv_vznos"
-        android:layout_alignRight="@+id/textView_stoimostKv"
-        android:layout_alignEnd="@+id/textView_stoimostKv" />
-
-    <EditText
-        android:id="@+id/editText_stoimostKv"
-        android:layout_width="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView_stoimostKv"
-        android:layout_alignBottom="@+id/textView_stoimostKv"
-        android:layout_toEndOf="@+id/textView_stoimostKv"
-        android:layout_toRightOf="@+id/textView_stoimostKv"
-        android:paddingLeft="50dp"
-        android:hint="3500000" />
-
     <EditText
         android:id="@+id/editText_pervonachVznos"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:ems="10"
         android:inputType="number"
-        android:layout_alignBottom="@+id/extView_pervonachVznos"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentEnd="false"
-        android:layout_alignLeft="@+id/editText_stoimostKv"
-        android:layout_alignStart="@+id/editText_stoimostKv"
-        android:paddingLeft="50dp"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@+id/extView_pervonachVznos"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/extView_pervonachVznos"
+        android:layout_toEndOf="@+id/extView_pervonachVznos"
+        android:gravity="left|center_vertical"
+        android:onClick="clearText"
         android:hint="850000" />
 
     <TextView
-        android:id="@+id/extView_srokKredita"
+        android:text="Стоимость квартиры:"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:text="@string/srok"
-        android:layout_below="@+id/extView_pervonachVznos"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/editText_procentStavka"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number|numberDecimal"
-        android:layout_alignBaseline="@+id/extView_procentStavka"
-        android:layout_alignBottom="@+id/extView_procentStavka"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/editText_pervonachVznos"
-        android:layout_alignStart="@+id/editText_pervonachVznos"
-        android:paddingLeft="50dp"
-        android:hint="10.9" />
-
-    <EditText
-        android:id="@+id/editText_srokKredita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:layout_above="@+id/editText_procentStavka"
-        android:layout_toEndOf="@+id/extView_procentStavka"
-        android:layout_alignLeft="@+id/editText_procentStavka"
-        android:layout_alignStart="@+id/editText_procentStavka"
-        android:paddingLeft="50dp"
-        android:hint="25"
-        android:layout_toRightOf="@+id/extView_procentStavka" />
-
-    <TextView
-        android:id="@+id/textView_stoimostKv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/stoimost"
+        android:layout_height="50dp"
+        android:id="@+id/textView10"
+        android:textSize="16sp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="Переплата за все время:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pereplataTextView"
-        android:layout_below="@+id/mesPlatezTextView"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp"
-        android:textSize="18sp"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView" />
-
-    <TextView
-        android:text="0 руб"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/mesPlatezTextView"
-        android:textSize="18sp"
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:paddingLeft="10dp"
-        android:textColor="@color/colorGreen"
-        android:layout_toEndOf="@+id/button_rasschitat"
-        android:layout_alignLeft="@+id/editText_procentStavka"
-        android:layout_alignStart="@+id/editText_procentStavka"
-        android:layout_toRightOf="@+id/button_rasschitat" />
-
-    <TextView
-        android:text="Месячный платеж:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:textSize="18sp"
-        android:layout_below="@+id/button_rasschitat"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:gravity="center_vertical|center_horizontal" />
+        android:gravity="top|bottom"
+        android:layout_toLeftOf="@+id/editText_pervonachVznos"
+        android:layout_toStartOf="@+id/editText_pervonachVznos" />
 
     <Button
         android:text="Посмотреть таблицу платежей"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/showTablBtn"
+        android:onClick="showTablPlatezei"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="31dp"
-        android:onClick="showTablPlatezei" />
+        style="@android:style/Widget.Button" />
+
+    <EditText
+        android:id="@+id/editText_procentStavka"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@+id/extView_procentStavka"
+        android:layout_toRightOf="@+id/extView_srokKredita"
+        android:gravity="left|center_vertical"
+        android:onClick="clearText"
+        android:hint="10.9" />
+
+    <TextView
+        android:text="0 руб"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/mesPlatezTextView"
+        android:textSize="16sp"
+        android:textColor="@color/colorGreen"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/extView_procentStavka"
+        android:layout_alignBottom="@+id/textView"
+        android:gravity="left|center_vertical"
+        android:layout_toRightOf="@+id/extView_procentStavka" />
+
+    <TextView
+        android:text="Месячный платеж:"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/textView"
+        android:textSize="16sp"
+        android:gravity="top|bottom"
+        android:layout_below="@+id/button_rasschitat"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/mesPlatezTextView"
+        android:layout_toStartOf="@+id/mesPlatezTextView" />
 
     <Button
         android:id="@+id/button_rasschitat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/raschitat"
-        android:onClick="calcucate"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:onClick="calculate"
+        android:layout_below="@+id/extView_procentStavka"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        style="@android:style/Widget.Button" />
+
+    <TextView
+        android:id="@+id/extView_pervonachVznos"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/perv_vznos"
+        android:textSize="16sp"
+        android:gravity="top|bottom"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/extView_srokKredita"
+        android:layout_width="wrap_content"
+        android:text="@string/srok"
+        android:textSize="16sp"
+        android:layout_height="50dp"
+        android:gravity="top|bottom"
+        android:layout_below="@+id/editText_pervonachVznos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/editText_pervonachVznos"
+        android:layout_toStartOf="@+id/editText_pervonachVznos" />
+
+    <TextView
+        android:id="@+id/extView_procentStavka"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/stavka"
+        android:textSize="16sp"
+        android:gravity="top|bottom"
+        android:layout_below="@+id/editText_srokKredita"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/editText_srokKredita"
+        android:layout_toStartOf="@+id/editText_srokKredita" />
+
+    <TextView
+        android:text="Общая переплата по %:"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/textView8"
+        android:textSize="16sp"
+        android:gravity="top|bottom"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/mesPlatezTextView"
+        android:layout_toStartOf="@+id/mesPlatezTextView" />
+
+    <EditText
+        android:id="@+id/editText_srokKredita"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:gravity="left|center_vertical"
+        android:layout_alignBaseline="@+id/extView_srokKredita"
+        android:layout_alignBottom="@+id/extView_srokKredita"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/extView_srokKredita"
+        android:layout_toEndOf="@+id/extView_srokKredita"
+        android:onClick="clearText"
+        android:hint="25" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:id="@+id/pereplataChisloTextView"
         android:text="0 руб"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:paddingLeft="10dp"
-        android:layout_alignBaseline="@+id/pereplataTextView"
-        android:layout_alignBottom="@+id/pereplataTextView"
+        android:gravity="left|center_vertical"
+        android:layout_alignBottom="@+id/textView8"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/mesPlatezTextView"
-        android:layout_alignStart="@+id/mesPlatezTextView" />
+        android:layout_toRightOf="@+id/textView8"
+        android:layout_toEndOf="@+id/textView8"
+        android:layout_below="@+id/mesPlatezTextView"
+        android:textColor="@android:color/holo_orange_dark" />
+
+    <EditText
+        android:id="@+id/editText_stoimostKv"
+        android:layout_width="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+        android:gravity="left|center_vertical"
+        android:singleLine="false"
+        android:onClick="clearText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="3500000"
+        android:layout_toRightOf="@+id/textView10"
+        android:layout_toEndOf="@+id/textView10" />
 
 </RelativeLayout>

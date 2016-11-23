@@ -10,12 +10,15 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="120dp"
+            android:layout_width="match_parent"
             android:layout_height="120dp"
-
             android:indeterminateOnly="true"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:indeterminate="false"
+            android:theme="@style/AlertDialog.AppCompat.Light"
+            android:elevation="1dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
 
         <TextView
             android:id="@+id/textView2"
