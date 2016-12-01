@@ -19,6 +19,6 @@ StartActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        }, 1500);
+        }, 1000);
     }
 }
