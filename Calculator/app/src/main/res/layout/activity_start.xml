@@ -8,18 +8,6 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context=".StartActivity">
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:indeterminateOnly="true"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:indeterminate="false"
-            android:theme="@style/AlertDialog.AppCompat.Light"
-            android:elevation="1dp"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
-
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
@@ -28,5 +16,16 @@
             android:textSize="20dp"
             android:layout_above="@+id/progressBar"
             android:layout_centerHorizontal="true" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:indeterminateOnly="true"
+            android:indeterminate="false"
+            android:theme="@style/AlertDialog.AppCompat.Light"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
 </RelativeLayout>

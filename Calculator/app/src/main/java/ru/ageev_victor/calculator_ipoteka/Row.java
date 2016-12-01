@@ -1,6 +1,5 @@
 package ru.ageev_victor.calculator_ipoteka;
 
-
 import android.content.Context;
 import android.graphics.Color;
 import android.view.Gravity;
@@ -30,7 +29,6 @@ public class Row extends TableRow {
         calculateForMes();
         setViewsToRow();
         setDataToRow();
-        addRowToRows();
     }
 
     private void setDataToRow() {
@@ -74,10 +72,4 @@ public class Row extends TableRow {
         vsego = procenti + osnDolg;
         MainActivity.summaKredita = ostatokKredita;
     }
-
-    public void addRowToRows() {
-        MainActivity.rows.add(this);
-    }
-
-
 }
