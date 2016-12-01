@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ипотека</string>
+    <string name="app_name">Калькулятор ипотеки</string>
     <string name="loading">Загрузка...</string>
     <string name="stoimost">Стоимость квартиры:</string>
     <string name="srok">Срок кредита:  (лет)</string>
