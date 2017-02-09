@@ -1,12 +1,24 @@
 <resources>
-    <string name="app_name">Калькулятор ипотеки</string>
-    <string name="loading">Загрузка...</string>
-    <string name="stoimost">Стоимость квартиры:</string>
-    <string name="srok">Срок кредита:  (лет)</string>
-    <string name="stavka">Процентная ставка:  (%)</string>
+    <string name="app_name">Ипотечный калькулятор</string>
+    <string name="stoimost">Стоимость:</string>
+    <string name="srok">Срок кредита: (лет)</string>
+    <string name="stavka">Cтавка:  (%)</string>
     <string name="dop_parametri">Дополнительные параметры:</string>
-    <string name="vid_plateza">Вид платежа:</string>
     <string name="nachalo_viplat">Начало выплат:</string>
-    <string name="perv_vznos">Первоначальный взнос:</string>
+    <string name="perv_vznos">Первый взнос:</string>
     <string name="raschitat">Рассчитать</string>
+    <string name="stoimostkv">Стоимость :</string>
+    <string name="_25">25</string>
+    <string name="_3500000">3500000</string>
+    <string name="_850000">850000</string>
+    <string name="_10_9">10.9</string>
+    <string name="mes_platez">Месячный платеж:</string>
+    <string name="pereplata">Общая переплата %:</string>
+    <string name="ostalos_viplatit">Осталось выплатить</string>
+    <string name="osn_dolg">Оплата долга</string>
+    <string name="procent">Оплата %</string>
+    <string name="platez_v_mes">платеж в месяц</string>
+    <string name="year">Месяц</string>
+    <string name="_0rub">0 руб</string>
+    <string name="open_table_po_godam">Таблица платежей</string>
 </resources>

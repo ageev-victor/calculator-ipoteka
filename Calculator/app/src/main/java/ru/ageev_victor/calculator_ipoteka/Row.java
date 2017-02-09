@@ -8,11 +8,12 @@ import android.widget.TextView;
 
 public class Row extends TableRow {
 
-    int month;
-    static int ostatokKredita;
-    static int osnDolg;
-    static int procenti;
-    static int vsego;
+    private int month;
+    private double ostatokKredita;
+    private double osnDolg;
+    private double procenti;
+    private double vsego;
+    boolean onlyCalculate;
 
     TextView viewMonth;
     TextView viewOstatokKredita;
@@ -21,40 +22,71 @@ public class Row extends TableRow {
     TextView viewVsego;
     Context context;
 
+    public Row(Context context, int month, Boolean onlyCalculate) {
+        super(context);
+        this.month = month;
+        this.onlyCalculate = onlyCalculate;
+        calculateForMes();
+    }
+
     public Row(Context context, int month) {
         super(context);
         this.context = context;
         this.month = month;
         createViews();
+        setSettingsToViews();
         calculateForMes();
         setViewsToRow();
         setDataToRow();
     }
 
+
     private void setDataToRow() {
         viewMonth.setText(String.valueOf(month));
-        viewOstatokKredita.setText(String.valueOf(ostatokKredita));
-        viewProcenti.setText(String.valueOf(procenti));
-        viewPlatez.setText(String.valueOf(osnDolg));
-        viewVsego.setText(String.valueOf(vsego));
+        if (month == MainActivity.srokKredita) {
+            viewOstatokKredita.setText("0");
+        } else {
+            String formattedOstatokKredita = String.format("%,d", ((int) ostatokKredita));
+            viewOstatokKredita.setText(formattedOstatokKredita);
+        }
+        String formattedProcenti = String.format("%,d", ((int) procenti));
+        viewProcenti.setText(formattedProcenti);
+        String formattedPlatez = String.format("%,d", ((int) osnDolg));
+        viewPlatez.setText(formattedPlatez);
+        String formattedVsego = String.format("%,d", ((int) vsego));
+        viewVsego.setText(formattedVsego);
     }
 
     private void createViews() {
         viewMonth = new TextView(context);
-        viewMonth.setTextColor(Color.BLACK);
-        viewMonth.setGravity(Gravity.CENTER_HORIZONTAL);
-        viewOstatokKredita = new TextView(context);
-        viewOstatokKredita.setGravity(Gravity.CENTER_HORIZONTAL);
-        viewOstatokKredita.setTextColor(Color.BLACK);
-        viewPlatez = new TextView(context);
-        viewPlatez.setGravity(Gravity.CENTER_HORIZONTAL);
-        viewPlatez.setTextColor(Color.BLACK);
-        viewProcenti = new TextView(context);
-        viewProcenti.setGravity(Gravity.CENTER_HORIZONTAL);
-        viewProcenti.setTextColor(Color.BLACK);
         viewVsego = new TextView(context);
-        viewVsego.setGravity(Gravity.CENTER_HORIZONTAL);
-        viewVsego.setTextColor(Color.BLACK);
+        viewOstatokKredita = new TextView(context);
+        viewPlatez = new TextView(context);
+        viewProcenti = new TextView(context);
+    }
+
+    private void setSettingsToViews() {
+        setSettingsToView(viewOstatokKredita);
+        setSettingsToView(viewPlatez);
+        setSettingsToView(viewProcenti);
+        setSettingsToView(viewVsego);
+        setSettingsToView(viewMonth);
+        setBackgroundResource(R.color.colorHighlight);
+        setPadding(0, 10, 0, 0);
+        if (month == MainActivity.srokKredita) setPadding(0, 10, 0, 10);
+    }
+
+    private void setSettingsToView(TextView view) {
+        view.setTextSize(14);
+        view.setTextColor(Color.BLACK);
+        view.setGravity(Gravity.CENTER_HORIZONTAL);
+        if (month % 60 == 0 | month == 1) {
+            view.setTextColor(Color.BLUE);
+        }
+        if (view == viewProcenti) {
+            view.setBackgroundResource(R.drawable.rectangle);
+            view.setTextColor(Color.RED);
+        }
     }
 
     public void setViewsToRow() {
@@ -66,8 +98,8 @@ public class Row extends TableRow {
     }
 
     public void calculateForMes() {
-        procenti = (int) (MainActivity.summaKredita * MainActivity.koefProcStavki);
-        osnDolg = (int) (MainActivity.mesPlatez - procenti);
+        procenti = (MainActivity.summaKredita * MainActivity.koefProcStavki);
+        osnDolg = (MainActivity.mesPlatez - procenti);
         ostatokKredita = MainActivity.summaKredita - osnDolg;
         vsego = procenti + osnDolg;
         MainActivity.summaKredita = ostatokKredita;

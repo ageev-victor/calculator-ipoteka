@@ -4,145 +4,295 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context="ru.ageev_victor.calculator_ipoteka.MainActivity">
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="6dp"
+        android:layout_weight="1"
+        android:background="@drawable/rectangle">
+
         <TextView
-            android:text="Стоимость квартиры:"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
             android:id="@+id/textView10"
-            android:textSize="14sp"
-            android:gravity="left|center_vertical|center_horizontal" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/stoimostkv"
+            android:textSize="18sp"
+            android:background="@color/colorHighlight" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorHighlight">
 
         <EditText
             android:id="@+id/editText_stoimostKv"
-            android:ems="10"
-            android:inputType="number"
-            android:layout_height="50dp"
-            android:hint="3500000"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center_vertical|center_horizontal"
+            android:inputType="number"
+            android:textColor="@color/colorGreen"
+            android:textSize="18sp"
+            android:text="@string/_3500000"
             android:layout_weight="1" />
+
+        <Button
+                android:id="@+id/clear_stoimost"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center_vertical"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:onClick="clearEdText"
+                android:backgroundTintMode="src_in" />
+        </FrameLayout>
     </TableRow>
 
-    <TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="6dp"
+        android:layout_weight="1"
+        android:background="@drawable/rectangle">
 
         <TextView
             android:id="@+id/extView_srokKredita"
-            android:layout_width="wrap_content"
-            android:text="@string/srok"
-            android:textSize="14sp"
-            android:layout_height="50dp"
-            android:gravity="left|center_vertical|center_horizontal" />
-
-        <EditText
-            android:id="@+id/editText_srokKredita"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="25"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorHighlight"
             android:gravity="center_vertical|center_horizontal"
-            android:layout_weight="1" />
+            android:text="@string/srok"
+            android:textSize="18sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorHighlight">
+
+            <EditText
+                android:id="@+id/editText_srokKredita"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center_vertical|center_horizontal"
+                android:inputType="number"
+                android:text="@string/_25"
+                android:textColor="@color/colorGreen"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center_vertical"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:onClick="clearEdText"
+                android:id="@+id/clear_srok" />
+        </FrameLayout>
     </TableRow>
-    <TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="6dp"
+        android:layout_weight="1"
+        android:background="@drawable/rectangle">
+
         <TextView
             android:id="@+id/extView_pervonachVznos"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="@string/perv_vznos"
-            android:textSize="14sp"
-            android:gravity="left|center_vertical|center_horizontal" />
-
-        <EditText
-            android:id="@+id/editText_pervonachVznos"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="850000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorHighlight"
             android:gravity="center_vertical|center_horizontal"
-            android:layout_weight="1" />
+            android:text="@string/perv_vznos"
+            android:textSize="18sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorHighlight">
+
+            <EditText
+                android:id="@+id/editText_pervonachVznos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center_vertical|center_horizontal"
+                android:inputType="number"
+                android:text="@string/_850000"
+                android:textColor="@color/colorGreen"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center_vertical"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:onClick="clearEdText"
+                android:id="@+id/clear_pervi_vznos" />
+        </FrameLayout>
     </TableRow>
-    <TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="6dp"
+        android:layout_weight="1"
+        android:background="@drawable/rectangle">
 
         <TextView
             android:id="@+id/extView_procentStavka"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="@string/stavka"
-            android:textSize="14sp"
-            android:gravity="left|center_vertical|center_horizontal" />
-
-        <EditText
-            android:id="@+id/editText_procentStavka"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:inputType="number|numberDecimal"
-            android:hint="10.9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorHighlight"
             android:gravity="center_vertical|center_horizontal"
-            android:layout_weight="1" />
-    </TableRow>
-    <Button
-        android:id="@+id/button_rasschitat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/raschitat"
-        android:onClick="calculate"
-        style="@android:style/Widget.Button" />
-    <TableRow>
-        <TextView
-            android:text="Месячный платеж:"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:id="@+id/textView"
-            android:textSize="14sp"
-            android:gravity="left|center_vertical|center_horizontal" />
-        <TextView
-            android:text="0 руб"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:id="@+id/mesPlatezTextView"
-            android:textSize="16sp"
-            android:textColor="@color/colorGreen"
-            android:gravity="left|center_vertical|center_horizontal"
-            android:layout_weight="1"
-            android:paddingLeft="20dp" />
-    </TableRow>
-    <TableRow>
-        <TextView
-            android:text="Общая переплата по %:"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:id="@+id/textView8"
-            android:textSize="14sp"
-            android:gravity="left|center_vertical|center_horizontal" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:id="@+id/pereplataChisloTextView"
-            android:text="0 руб"
-            android:textSize="16sp"
-            android:gravity="left|center_vertical|center_horizontal"
-            android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:textColor="@color/colorPrimaryDark" />
-    </TableRow>
-    <Button
-        android:text="Посмотреть таблицу платежей по годам"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/showTablBtn"
-        android:onClick="showTablPlatezei"
-        style="@android:style/Widget.Button" />
+            android:text="@string/stavka"
+            android:textSize="18sp" />
 
-</TableLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorHighlight">
+
+            <EditText
+                android:id="@+id/editText_procentStavka"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center_vertical|center_horizontal"
+                android:inputType="number|numberDecimal"
+                android:text="@string/_10_9"
+                android:textColor="@color/colorGreen"
+                android:textSize="18sp" />
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center_vertical"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:onClick="clearEdText"
+                android:id="@+id/clear_stavka" />
+        </FrameLayout>
+</TableRow>
+
+<TableRow
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_marginBottom="6dp"
+android:layout_weight="1">
+
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@color/colorHighlight"
+    android:gravity="center_vertical|center_horizontal"
+    android:text="@string/mes_platez"
+    android:textColor="@color/colorPrimary"
+    android:textSize="18sp" />
+
+<TextView
+    android:id="@+id/mesPlatezTextView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="6dp"
+    android:layout_weight="1"
+    android:background="@drawable/rounded"
+    android:gravity="center_vertical|center_horizontal"
+    android:paddingRight="10dp"
+    android:text="@string/_0rub"
+    android:textColor="@color/colorPrimary"
+    android:textSize="18sp"
+    android:textStyle="normal|bold|italic" />
+</TableRow>
+
+<TableRow
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_marginBottom="6dp"
+android:layout_weight="1">
+
+<TextView
+    android:id="@+id/textView8"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@color/colorHighlight"
+    android:gravity="center_vertical|center_horizontal"
+    android:text="@string/pereplata"
+    android:textColor="@color/colorAccent"
+    android:textSize="18sp" />
+
+<TextView
+    android:id="@+id/pereplataChisloTextView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="6dp"
+    android:layout_weight="1"
+    android:background="@drawable/rounded"
+    android:gravity="center_vertical|center_horizontal"
+    android:paddingRight="10dp"
+    android:text="@string/_0rub"
+    android:textColor="@color/colorAccent"
+    android:textSize="18sp"
+    android:textStyle="normal|bold|italic" />
+</TableRow>
+
+<TableRow
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_marginBottom="6dp">
+
+<Button
+    android:id="@+id/button_rasschitat"
+    style="@android:style/Widget.Button"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_span="2"
+    android:layout_weight="1"
+    android:elevation="2dp"
+    android:onClick="calculate"
+    android:text="@string/raschitat"
+    android:textAllCaps="true"
+    android:textStyle="normal|bold" />
+</TableRow>
+
+<TableRow
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<Button
+    android:id="@+id/showTablBtn"
+    style="@android:style/Widget.Button"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_span="2"
+    android:layout_weight="1"
+    android:elevation="2dp"
+    android:onClick="showTablPlatezei"
+    android:text="@string/open_table_po_godam"
+    android:textAllCaps="true"
+    android:textStyle="normal|bold" />
+
+
+</TableRow>
+
+    </TableLayout>
